@@ -83,10 +83,11 @@
 				customerEmail: $('#reserve_email').val().trim(),
 				customerID: $('#reserve_uniqueID').val().trim()
 			};
+		
 		 $.post("/api/reserve", newReservation)
 		.then(function(data) {
-		  console.log("reserations.html", data);
-		  alert("Adding reservations...");
+		  console.log(data);
+		  return data;
 		});
 		});
 		</script>
