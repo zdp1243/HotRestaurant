@@ -23,9 +23,9 @@ module.exports = function(app){
   app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, "index.html"));
   });
+  
+  app.get("/api/reserve", function(req, res) {
+    return res.json(tableArray);
+  });
 }
 
-app.get("/api/reserve", function(req, res) {
-  
-  return res.json(tableArray);
-});
