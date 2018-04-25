@@ -15,7 +15,7 @@ module.exports = function(app){
     res.sendFile(path.join(__dirname, "tables.html"));
   });
 
-  app.post('/reserve', (req, res)=>{
+  app.post('/api/reserve', (req, res)=>{
       tableArray.push(req.body)
       console.log("HIP HIP ARRAY: " + tableArray)
   });
@@ -24,3 +24,8 @@ module.exports = function(app){
     res.sendFile(path.join(__dirname, "index.html"));
   });
 }
+
+app.get("/api/reserve", function(req, res) {
+  
+  return res.json(tableArray);
+});
