@@ -5,18 +5,7 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
-//routes
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "index.html"));
-  });
-  
-  app.get("/reserve", function(req, res) {
-    res.sendFile(path.join(__dirname, "reservations.html"));
-  });
-
-  app.get("/tables", function(req, res) {
-    res.sendFile(path.join(__dirname, "tables.html"));
-  });
+require('./routes.js')(app);
 
 app.listen(PORT, () => {
     console.log('server listening on port '+PORT);
