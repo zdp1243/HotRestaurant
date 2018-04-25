@@ -6,7 +6,7 @@ $(".submit").on("click", function(){
         customerID: $('#reserve_uniqueID').val().trim()
     };
 
- $.post("/api/reservations", newReservation)
+ $.post("/api/reserve", newReservation)
 .then(function(data) {
   console.log("reserations.html", data);
   alert("Adding reservations...");
