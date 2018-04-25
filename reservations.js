@@ -1,4 +1,6 @@
 $(".submit").on("click", function(){
+    
+console.log("test");    
     var newReservation = {
         customerName: $('#reserve_name').val().trim(),
         phoneNumber: $('#reserve_phone').val().trim(),
@@ -6,7 +8,7 @@ $(".submit").on("click", function(){
         customerID: $('#reserve_uniqueID').val().trim()
     };
 
- $.post("/api/reservations", newReservation)
+ $.post("/api/reserve", newReservation)
 .then(function(data) {
   console.log("reserations.html", data);
   alert("Adding reservations...");

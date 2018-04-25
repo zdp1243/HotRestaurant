@@ -73,6 +73,22 @@
 	    </footer>
 
 	</div>
-
-
+	<script type="text/javascript">
+	$(".submit").on("click", function(){
+		event.preventDefault();
+		console.log("test");    
+			var newReservation = {
+				customerName: $('#reserve_name').val().trim(),
+				phoneNumber: $('#reserve_phone').val().trim(),
+				customerEmail: $('#reserve_email').val().trim(),
+				customerID: $('#reserve_uniqueID').val().trim()
+			};
+		
+		 $.post("/api/reserve", newReservation)
+		.then(function(data) {
+		  console.log("reserations.html", data);
+		  alert("Adding reservations...");
+		});
+		});
+		</script>
 </body></html>
