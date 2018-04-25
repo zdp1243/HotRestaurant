@@ -1,4 +1,6 @@
 $(".submit").on("click", function(){
+    
+console.log("test");    
     var newReservation = {
         customerName: $('#reserve_name').val().trim(),
         phoneNumber: $('#reserve_phone').val().trim(),
